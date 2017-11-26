@@ -1,64 +1,14 @@
 # 入坑手册
 
-## step1:dependencies
+# step0: create `mavenWeb` project
 
-### create `Maven Project`;
+then, 指定 `Targeted Runtime: Apache Tomcate v8.5`.
 
-### configurate `pom.xml`
+# step1:dependencies
 
-#### main snippet:
+##  configurate `pom.xml`
 
-```xml
-<project ...>
-  
-  	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<struts2.version>2.5.13</struts2.version>
-		<log4j2.version>2.8.2</log4j2.version>
-	</properties>
-  
-  <dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-core</artifactId>
-			<version>${struts2.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j2.version}</version>
-		</dependency>
-    
-    		<dependency>
-			<groupId>javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.12.0.GA</version>
-		</dependency>
-	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.apache.logging.log4j</groupId>
-				<artifactId>log4j-api</artifactId>
-				<version>${log4j2.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-  
-</project>
-```
-
-#### complete `pom.xml`:
+ pom.xml
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -129,7 +79,7 @@
 
 
 
-## step2: source folder
+# step2: source folder
 
 添加 `source folder` :
 
@@ -143,7 +93,7 @@ project => properties => `Java Build Path` => `Source` => `Remove` the missing f
 
 
 
-## step3: view
+# step3: view
 
 index.jsp
 
@@ -222,7 +172,7 @@ WEB-INF/web.xml
 
 
 
-## step4: log4j2
+# step4: log4j2
 
 log4j2.xml
 
@@ -247,7 +197,7 @@ log4j2.xml
 
 
 
-## step5: controller
+# step5: controller
 
 src/main/java/cheng/Upload.java
 
@@ -314,7 +264,7 @@ public class Upload extends ActionSupport {
 
 
 
-## step6:  struts.xml
+# step6:  struts.xml
 
 struts.xml
 
@@ -352,7 +302,7 @@ struts.xml
 
 
 
-## step7:  war
+# step7:  war
 
 export as `war`
 
