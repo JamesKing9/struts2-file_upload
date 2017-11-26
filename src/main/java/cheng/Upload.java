@@ -9,10 +9,6 @@ import com.opensymphony.xwork2.ActionSupport;
  * <code>Allows upload a file</code>
  */
 public class Upload extends ActionSupport {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private File[] upload;
